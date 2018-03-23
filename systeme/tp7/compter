@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my %hash;
+
+while(<>){
+	chomp();
+	$hash{$_}++;
+}
+
+while((my $cle,my $valeur)=each (%hash)){
+	print "nombres d'occurences de $cle : $valeur", "\n";
+}

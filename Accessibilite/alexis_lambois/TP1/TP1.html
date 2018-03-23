@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>TP1 - Les images - Les cadres - Les couleurs</title>
+	<style type="text/css" media="all">
+		body {margin:20px;}
+		div.enonce{
+		display:table;
+		padding:15px;
+		border-style: solid;
+		border-width: 4px;
+		}
+		div#couleurs div{margin:20px;}
+		div.couleurs{
+		color:white;
+		background-color:#581845;
+		padding : 1%;
+		}
+		.iframe{
+			height:20%;
+			width:50%;
+			text-align:center;
+		}
+		.vert {
+			width:30%;
+			background-color:#029600;
+padding : 1%;
+color:white;
+		}
+		.rouge {
+			width:30%;
+			background-color:#B40909;
+padding : 1%;
+color:white;
+		}
+	</style>
+</head>
+<body>
+<h1>TP 1 images, cadres, couleurs</h1>
+<div class="enonce">
+<h2>Objectifs du TP</h2>
+	<ul>
+		<li>Trouver pour chaque image une alternative appropriée en fonction du rôle et du contenu de l'image un fichier de description longue "desclong" est disonible avec les images</li>
+		<li>Identifier les problèmes de contrastes de couleur s'il y'en a, et les corriger</li>
+		<li>Identifier les cas de transmission de l'information par la couleur s'il y'en a, et les corriger</li>
+		<li>Mettre en place une iframe comme spécifié dans le corps de la page au paragraphe "les couleurs"</li>
+	</ul>
+</div>
+<div>
+<h2>Les images</h2>
+	<div>
+		<img src="./images/Image1.jpg" alt="Personne qui peint un mur"/>
+	</div>
+	<div>
+		<img src="./images/bienvenue.gif" alt="Bienvenue"/>
+	</div>
+	<div>
+		<a href="mailto:info@societe.com"><img src="./images/icone_email.png" alt="email" /></a>
+	</div>
+	<div>
+		<img src="./images/zidane.jpg" alt="Zidane coupe du monde 98 france" /><br/>
+		<i>copyright Aimé Jacquet</i>
+	</div>
+	<div>
+		<img src="./images/histogramme.png" alt="histogramme un peu etrange "/>
+	</div>
+</div>
+<div id="couleurs">
+	<h2>Les couleurs</h2>
+	<div class="couleurs">
+		<p>une iframe vers la page d'accueil du W3C (https://www.w3c.fr/) sera disponible entre le bloc d'emplacement vert et le bloc d'emplacement rouge</p>
+	</div>
+	<h2>Les cadres</h2>
+	<div>
+		<p>bloc d'emplacement 1</p>
+	</div>
+	<div>
+		<p>bloc d'emplacement 2</p>
+	</div>
+	<div class="vert">
+		<p>bloc d'emplacement 3</p>
+	</div>
+	<div class="iframe">
+		<iframe src="https://www.w3c.fr/"><p>bloc d'emplacement 4</p></iframe>
+	</div>
+	<div class="rouge" >
+		<p>bloc d'emplacement 5</p>
+	</div>
+</div>
+</body>
+</html>

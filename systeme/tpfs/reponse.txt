@@ -1,0 +1,133 @@
+Question 2:
+1) cd tpfs/a-faire
+2) /home/infoetu/lambois/systeme/tpfs/fait/Gestion
+3) ../fait/Algo
+4) Anglais
+
+Question 4:
+tpfs
+|--a-faire 119544014
+|  |
+|  |-- Algo2 119544107
+|  |-- Anglais 119544115
+|  |-- Math 119544116
+|
+|--fait 119544060
+|  |
+|  |-- Algo 119544124
+|  |-- Gestion 119544123
+
+Question 6:
+Peripherique 23h/35d
+
+Question 7:
+.
+..
+tpfs/
+├── [119544014]  a-faire
+│   ├── [119544107]  Algo2
+│   ├── [119544115]  Anglais
+│   └── [119544116]  Math
+├── [119544060]  fait
+│   ├── [119544124]  Algo
+│   └── [119544123]  Gestion
+└── [119475030]  reponses
+
+Question 8:
+1) cat Algo2 > Algorithmique
+2) cat Algo2 >> ../fait/Algo
+3) mv Anglais English
+4) mv English ../fait/
+5) ln Math ../fait/Abandon
+6) echo regret >> ../fait/Abandon
+7) cat Math
+8) ln -s ../fait/Abandon Persevere
+9) cat Persevere
+10) rm Abandon
+11) cat Persevere
+12) cat Math
+13) mkdir plustard
+14) ln Math /tmp/Sauvegarde Pas le même peripherique
+
+Question 9:
+Nombres : 3 Correspond aux nombres de liens que l'on a fait
+
+
+Exercice 2:
+
+Question 1:
+gid=1005(infoetu)
+ll -a
+
+Question 2:
+mkdir prive
+echo lambois > prive/prive
+
+Question 3:
+chmod go -x prive/
+
+Question 4:
+chmod 740 partage/lecture
+chmod 760 partage/ecriture
+
+Question 5:
+cat /home/infoetu/slowinsd/S5/systeme/tpfs/prive/prive
+cat /home/infoetu/slowinsd/S5/systeme/tpfs/partage/lecture
+echo lamboisa >> /home/infoetu/slowinsd/S5/systeme/tpfs/partage/ecriture
+
+Question 6:
+chmod 760 partage/
+
+Question 7:
+touch /home/infoetu/slowinsd/S5/systeme/tpfs/partage/lamboisa
+
+Question 8:
+Impossible car il n'a pas les droits
+
+Question 9:
+Possible car il a les droits d ecriture du repertoire
+
+Question 10:
+Possible car il a les droits d'execution du repertoire
+
+Question 11:
+echo echo Hello World > salut
+
+Question 12:
+Impossible
+chmod +x
+Possible
+
+Question 13:
+umask --> 0022
+
+Question 14: 
+mkdir tmp
+
+Question 15:
+777 --> 111111111
+022 --> 000010010
+res --> 111101101 --> rwxr-xr-x
+
+Question 16:
+umask 002
+
+Question 17:
+touch verif/tmp
+
+
+Exercice 3:
+
+Question 1:
+1) getent passwd | wc -l
+2) getent passwd | cut -f 5 -d ':' | cut -f 1 -d ' ' | sort -u | wc -l
+3) getent passwd | cut -f 5 -d ':' | cut -f 1 -d ' ' | sort | uniq -c | sort | head
+4) 
+5) getent passwd | grep /home/infoetu | wc -l ; getent passwd | cut -f 5 -d ':' | tr ' ' \t > /dev/pts/2
+6) getent passwd | cut -f 5 -d ':' | cut -f 1 -d ' ' | cut -c 1 | sort | uniq -c | sort -n | tail -n1  
+7) getent passwd | cut -f 3 -d '/' | sort -u | wc -l
+8) getent passwd | cut -f 5 -d ':' | cut -f 2 -d ' ' | uniq -c | grep -v 1 | wc -l
+
+Question 2:
+1) last | cut -f 1 -d ' ' | uniq -c | sort -nr
+2) last | grep -B 1 'reboot' | grep -v 'reboot'

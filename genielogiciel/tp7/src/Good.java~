@@ -1,0 +1,18 @@
+public class Good{
+
+    protected int weight;
+    protected int volume;
+
+    public Good(int weight,int volume){
+	this.weight=weight;
+	this.volume=volume;
+    }
+
+    public getWeight(){
+	return this.weight;
+    }
+
+    public getVolume(){
+	return this.volume;
+    }
+}

@@ -1,0 +1,6 @@
+public class Routiere extends Cargaison_terre{
+
+    public Routiere(int dsitance){
+	super(distance,38000);
+    }
+}

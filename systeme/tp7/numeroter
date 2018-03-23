@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my $num=1;
+my $fichier;
+
+if(@ARGV == 1){
+    open($fichier, $ARGV[0]);
+    while (<$fichier>) {print "$num $_" ; $num++;}
+    close($fichier);
+} else{
+    $fichier="";
+    while(<>){$fichier = $fichier.$num." ".$_;$num++; }
+    print $fichier;
+}
+

@@ -1,0 +1,169 @@
+/*==============================================================*/
+/* Nom de SGBD :  Microsoft Access 2000                         */
+/* Date de création :  13/09/2017 11:25:14                      */
+/*==============================================================*/
+
+
+alter table EXPOSANT
+   drop constraint FK_EXPOSANT_A_CODIF;
+
+alter table STANDS
+   drop constraint FK_STANDS_QUALIFIE_TYPE_DE_;
+
+alter table TARIF
+   drop constraint FK_TARIF_TARIF_EXPOSANT;
+
+alter table TARIF
+   drop constraint FK_TARIF_TARIF2_DESCRIPT;
+
+alter table TARIF
+   drop constraint FK_TARIF_TARIF3_STANDS;
+
+drop table CODIF;
+
+drop table DESCRIPTION;
+
+drop index A_FK on EXPOSANT;
+
+drop table EXPOSANT;
+
+drop index QUALIFIE_FK on STANDS;
+
+drop table STANDS;
+
+drop index TARIF3_FK on TARIF;
+
+drop index TARIF2_FK on TARIF;
+
+drop index TARIF_FK on TARIF;
+
+drop table TARIF;
+
+drop table TYPE_DE_STAND;
+
+/*==============================================================*/
+/* Table : CODIF                                                */
+/*==============================================================*/
+create table CODIF
+(
+    TYPE                 NOTE            not null,
+    DESCRIPTION          NOTE,
+constraint PK_CODIF primary key (TYPE)
+);
+
+/*==============================================================*/
+/* Table : DESCRIPTION                                          */
+/*==============================================================*/
+create table DESCRIPTION
+(
+    DNO                  INTEGER         not null,
+    RESUME               NOTE,
+constraint PK_DESCRIPTION primary key (DNO)
+);
+
+/*==============================================================*/
+/* Table : EXPOSANT                                             */
+/*==============================================================*/
+create table EXPOSANT
+(
+    ENO                  INTEGER         not null,
+    TYPE                 NOTE            not null,
+    NOM_EXPOSANT         NOTE,
+    ADRESSE              NOTE,
+    CODE_POSTAL          INTEGER,
+constraint PK_EXPOSANT primary key (ENO)
+);
+
+/*==============================================================*/
+/* Index : A_FK                                                 */
+/*==============================================================*/
+create  index A_FK on EXPOSANT
+(
+   TYPE                 ASC
+);
+
+/*==============================================================*/
+/* Table : STANDS                                               */
+/*==============================================================*/
+create table STANDS
+(
+    SNO                  INTEGER         not null,
+    TNO                  NOTE            not null,
+    ALLEE                INTEGER,
+    PLACE                INTEGER,
+constraint PK_STANDS primary key (SNO)
+);
+
+/*==============================================================*/
+/* Index : QUALIFIE_FK                                          */
+/*==============================================================*/
+create  index QUALIFIE_FK on STANDS
+(
+   TNO                  ASC
+);
+
+/*==============================================================*/
+/* Table : TARIF                                                */
+/*==============================================================*/
+create table TARIF
+(
+    ENO                  INTEGER         not null,
+    DNO                  INTEGER         not null,
+    SNO                  INTEGER         not null,
+    MONTANT              INTEGER,
+constraint PK_TARIF primary key (ENO, DNO, SNO)
+);
+
+/*==============================================================*/
+/* Index : TARIF_FK                                             */
+/*==============================================================*/
+create  index TARIF_FK on TARIF
+(
+   ENO                  ASC
+);
+
+/*==============================================================*/
+/* Index : TARIF2_FK                                            */
+/*==============================================================*/
+create  index TARIF2_FK on TARIF
+(
+   DNO                  ASC
+);
+
+/*==============================================================*/
+/* Index : TARIF3_FK                                            */
+/*==============================================================*/
+create  index TARIF3_FK on TARIF
+(
+   SNO                  ASC
+);
+
+/*==============================================================*/
+/* Table : TYPE_DE_STAND                                        */
+/*==============================================================*/
+create table TYPE_DE_STAND
+(
+    TNO                  NOTE            not null,
+constraint PK_TYPE_DE_STAND primary key (TNO)
+);
+
+alter table EXPOSANT
+   add constraint FK_EXPOSANT_A_CODIF foreign key (TYPE)
+      references CODIF (TYPE);
+
+alter table STANDS
+   add constraint FK_STANDS_QUALIFIE_TYPE_DE_ foreign key (TNO)
+      references TYPE_DE_STAND (TNO);
+
+alter table TARIF
+   add constraint FK_TARIF_TARIF_EXPOSANT foreign key (ENO)
+      references EXPOSANT (ENO);
+
+alter table TARIF
+   add constraint FK_TARIF_TARIF2_DESCRIPT foreign key (DNO)
+      references DESCRIPTION (DNO);
+
+alter table TARIF
+   add constraint FK_TARIF_TARIF3_STANDS foreign key (SNO)
+      references STANDS (SNO);
+

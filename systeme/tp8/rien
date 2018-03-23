@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+print "Processus de pid ", $$, " démarre \n";
+sleep(3);
+print "Processus de pid ", $$, " fin \n";
+

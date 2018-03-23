@@ -1,0 +1,15 @@
+import java.util.*;
+public class recensements{
+    public static void main(String args[]){
+	
+	Scanner sc = new Scanner(System.in);
+	HashSet<Character> e = new HashSet<Character>();
+	String chaine = sc.nextLine();
+	for (int i=0; i<.length(); i++)
+	    e.add(s.charAt(i));
+	Iterator<Character> it = e.iterator();
+	while(it.hasNext())
+	    System.out.print(it.next() + " ");
+
+    }
+}

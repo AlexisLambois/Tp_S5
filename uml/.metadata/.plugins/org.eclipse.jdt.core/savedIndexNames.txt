@@ -1,0 +1,1 @@
+INDEX VERSION 1.126+\\VBOXSVR\HomeDirectory\S5\uml\.metadata\.plugins\org.eclipse.jdt.core

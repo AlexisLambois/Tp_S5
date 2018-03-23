@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use Socket;
+
+socket (SERVEUR, PF_INET, SOCK_STREAM, getprotobyname('tcp'));
+my $adresse = inet_aton ("$ARGV[0]") || die ("inet_aton");
+my $adresse_complete = sockaddr_in("80",$adresse) || die ("sockaddr_in");
+connect (SERVEUR, $adresse_complete) || die ("connect");
+
+select(SERVEUR);
+$|=1;
+select(STDOUT);
+print
+print SERVEUR "GET "."$ARGV[1]"." HTTP/1.1\r\n";
+print SERVEUR "Host: da2i.univ-lille1.fr\r\n";
+print SERVEUR "\r\n";
+
+while(<SERVEUR>){
+	print "",$_;
+}
+close (SERVEUR);

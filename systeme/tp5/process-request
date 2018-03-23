@@ -1,0 +1,66 @@
+#!/bin/bash
+
+function verif {
+	if [ $(echo "$1 $2 $3" | wc -w) = 3 ]
+	then
+		if [ $1 = "GET" ]
+		then
+			if [ $3 = "HTTP/1.1" ]
+			then
+				good_reponse
+			else
+				bad_reponse "505" "HTTP Version not supported" "26"
+				exit 1
+			fi
+		else
+			bad_reponse "405" "Method Not Allowed" "18"
+			exit 1		
+		fi
+	else
+		echo "pas arg"
+		exit 1
+	fi
+}
+
+function bad_reponse {
+	printf "HTTP/1.1 $1 $2\r\n"
+	printf "Content-Length: $3\r\n"
+	printf "Content-Type: text/text\r\n"
+	printf "Connection Closed\r\n"
+	printf "\r\n"
+}
+
+function good_reponse {
+	printf "HTTP/1.1 200 OK\r\n"
+	printf "Content-Length: 2\r\n"
+	printf "Content-Type: text/text\r\n"
+	printf "\r\n"
+}
+
+function processrequest {
+	echo $1
+	if [ $1 = "/" ]
+	then
+		if [ -e index.html ]
+		then
+			good_reponse $(stat index.html -- print %s)
+			cat index.html
+		else
+			bad_reponse "403" "Forbidden" "9" 
+		fi
+	else
+		if [ -e "./$1" ]
+		then
+			good_reponse
+			cat "./$1"
+		else
+			bad_reponse "404" "Not Found" "9"
+		fi
+	fi
+}
+
+read fichier chemin methode
+if verif $fichier $chemin $methode
+then
+	processrequest $chemin
+fi

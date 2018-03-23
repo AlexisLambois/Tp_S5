@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my $res = 1;
+my $var = $ARGV[0];
+
+if($var =~ m/^\d+$/ && $var > 0){
+  while($var > 0) {
+   $res *= $var;
+   $var--;
+ }
+ print "$res\n";
+}else{
+  print "Argument invalide\n";
+}

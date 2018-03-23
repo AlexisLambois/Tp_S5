@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use POSIX ":sys_wait_h";
+
+my $nb_fils_max = $ARGV[0];
+my $cpt = 0;
+
+while(<STDIN>){
+	my $retour_du_fork = fork();
+	if ($retour_du_fork != 0) {
+		if($cpt <= $nb_fils_max){
+			print "Je suis le pere de pid : $$ et j'ai créer $retour_du_fork \n";
+			$cpt++;
+		}else{
+			print "Doit attendre \n";
+		}
+	}else{
+		exec("perl rien") or die;
+	}
+}

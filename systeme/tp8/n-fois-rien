@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use POSIX ":sys_wait_h";
+
+my @tab;
+
+for (my $i = 0; $i < $ARGV[0] ; $i++) {
+
+	my $retour_du_fork = fork();
+
+	if ($retour_du_fork != 0) {
+		@tab[$i] = $retour_du_fork;
+		print "Je suis le pere de pid : $$ et j'ai créer $retour_du_fork \n";
+	}else{
+		exec("perl rien") or die;
+	}
+	
+}
+
+foreach (@tab) {
+	my $n = waitpid($_, 0);
+	print ("Fils $n terminé\n");
+}

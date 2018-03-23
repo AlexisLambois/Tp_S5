@@ -1,0 +1,49 @@
+26-Jan-2018 15:11:45.499 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.27
+26-Jan-2018 15:11:45.505 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 18 2018 20:12:40 UTC
+26-Jan-2018 15:11:45.505 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.27.0
+26-Jan-2018 15:11:45.505 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+26-Jan-2018 15:11:45.506 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            3.16.0-5-amd64
+26-Jan-2018 15:11:45.506 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+26-Jan-2018 15:11:45.506 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/jdk-8-oracle-x64/jre
+26-Jan-2018 15:11:45.506 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_71-b15
+26-Jan-2018 15:11:45.506 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+26-Jan-2018 15:11:45.506 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27
+26-Jan-2018 15:11:45.507 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27
+26-Jan-2018 15:11:45.507 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/conf/logging.properties
+26-Jan-2018 15:11:45.507 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+26-Jan-2018 15:11:45.507 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+26-Jan-2018 15:11:45.507 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+26-Jan-2018 15:11:45.508 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+26-Jan-2018 15:11:45.508 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27
+26-Jan-2018 15:11:45.508 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27
+26-Jan-2018 15:11:45.508 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/temp
+26-Jan-2018 15:11:45.508 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+26-Jan-2018 15:11:45.695 INFOS [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+26-Jan-2018 15:11:45.713 INFOS [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+26-Jan-2018 15:11:45.720 INFOS [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+26-Jan-2018 15:11:45.721 INFOS [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+26-Jan-2018 15:11:45.729 INFOS [main] org.apache.catalina.startup.Catalina.load Initialization processed in 646 ms
+26-Jan-2018 15:11:45.761 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+26-Jan-2018 15:11:45.762 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.27
+26-Jan-2018 15:11:45.774 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire [/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/webapps/ROOT] de l'application web
+26-Jan-2018 15:11:46.177 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/webapps/ROOT] has finished in [402] ms
+26-Jan-2018 15:11:46.177 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire [/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/webapps/docs] de l'application web
+26-Jan-2018 15:11:46.216 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/webapps/docs] has finished in [39] ms
+26-Jan-2018 15:11:46.216 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire [/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/webapps/demarrage] de l'application web
+26-Jan-2018 15:11:46.245 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/webapps/demarrage] has finished in [29] ms
+26-Jan-2018 15:11:46.245 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire [/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/webapps/manager] de l'application web
+26-Jan-2018 15:11:46.282 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/webapps/manager] has finished in [37] ms
+26-Jan-2018 15:11:46.282 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire [/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/webapps/host-manager] de l'application web
+26-Jan-2018 15:11:46.313 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/webapps/host-manager] has finished in [30] ms
+26-Jan-2018 15:11:46.313 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire [/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/webapps/examples] de l'application web
+26-Jan-2018 15:11:46.633 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/infoetu/lamboisa/S5/javascript/01-rappels-js/apache-tomcat-8.5.27/webapps/examples] has finished in [320] ms
+26-Jan-2018 15:11:46.636 INFOS [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+26-Jan-2018 15:11:46.644 INFOS [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+26-Jan-2018 15:11:46.661 INFOS [main] org.apache.catalina.startup.Catalina.start Server startup in 931 ms
+26-Jan-2018 16:55:45.914 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+26-Jan-2018 16:55:45.969 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+26-Jan-2018 16:55:46.020 INFOS [Thread-5] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+26-Jan-2018 16:55:46.048 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+26-Jan-2018 16:55:46.049 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+26-Jan-2018 16:55:46.050 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+26-Jan-2018 16:55:46.051 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]

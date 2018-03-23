@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><servers>
+  <server hostname="localhost" id="Serveur de test AJAX" id-set="true" name="Serveur de test AJAX" runtime-id="Serveur de test AJAX" server-type="com.ibm.etools.ajax.server.serverType" server-type-id="com.ibm.etools.ajax.server.serverType" start-timeout="240" stop-timeout="240" timestamp="0"/>
+</servers>

@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+foreach $elem (@ARGV){
+	print $elem," : \n";
+	open(FICHIER, "$elem");
+	while (<FICHIER>) {
+		print;
+	}
+	print "\n";
+	print "\n";
+	close(FICHIER);
+}

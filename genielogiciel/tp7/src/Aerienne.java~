@@ -1,0 +1,6 @@
+public class Aerienne extends Cargaison_aerien{
+
+    public Aerienne(int distance){
+	super();
+    }
+}

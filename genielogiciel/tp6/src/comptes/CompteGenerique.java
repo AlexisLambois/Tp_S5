@@ -1,0 +1,38 @@
+package comptes;
+public abstract class CompteGenerique implements Compte{
+
+    final private int numero;
+
+    public double montant;
+
+    protected int anciennete;
+
+    public CompteGenerique(int numero){
+	this.montant=0;
+	this.anciennete=0;
+	this.numero=numero;
+    }
+
+    public int getNumero(){
+	return this.numero;
+    }
+
+    public int getAnciennete(){
+	return this.anciennete;
+    }
+
+    public String toString(){
+	return "Compte numero : "+this.numero+" a pour anciennete : "+this.anciennete+"\n";  
+    }
+
+    public void ajouter(double somme){
+	this.montant+=somme;
+    }
+
+    public void retirer(double somme){
+	this.montant-=somme;
+    }
+
+    public abstract void operationsMensuelles() throws DepassementDecouvertExc, VersementsInsuffisantsExc;
+    
+}

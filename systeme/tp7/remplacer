@@ -1,0 +1,53 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+print "Fichier d'entrée : ";
+chomp(my $entree = <STDIN>);
+if(!-e $entree){
+    print "Fichier incorrect\n";
+    exit(1);
+}
+
+print "Fichier de sortie : ";
+chomp(my $sortie = <STDIN>);
+
+print "Motif à remplacer : ";
+chomp(my $aRemplacer = <STDIN>);
+
+print "Motif de remplacement : ";
+chomp(my $remplacement = <STDIN>);
+
+
+if(-e $sortie){
+    print "Le fichier de sortie existe déjà, voulez-vous l'écraser ? o/n ";
+    my $reponse = <STDIN>;
+    if($reponse =~ "o"){
+	copier($entree, $sortie);
+    } elsif ( $reponse =~ "n"){
+	print "Rien ne se passe.\n";
+    } else {
+	print "Réponse incorrecte. Rien ne se passe.\n";
+    }
+
+} else {
+    copier($entree, $sortie);
+}
+
+
+
+sub copier{
+    my $entree = shift;
+    my $sortie = shift;
+    open(my $txtIN, $entree);
+    open (my $txtOUT, ">", $sortie);
+    while (<$txtIN>){
+	if (/$aRemplacer/) {
+	    $_ =~ s/$aRemplacer/$remplacement/;
+	    print $txtOUT $_; }
+	else { print $txtOUT $_;}
+    }
+    close($txtIN);
+    close($txtOUT);
+}

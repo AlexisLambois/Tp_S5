@@ -1,0 +1,28 @@
+import java.util.*;
+public class exo3q2{
+    public static void main(String args[]){
+	Scanner sc = new Scanner(System.in);
+	StringTokenizer st = new StringTokenizer(sc.nextLine());
+	Stack<String> sta = new Stack<>();
+	while(st.hasMoreTokens()){
+	    sta.push(st.nextToken());
+	}
+	for(char c : list){
+	    System.out.print(c);
+	}
+	System.out.print("\n");
+
+	boolean b = true;
+	int i = 0;
+	    
+	while(!sta.empty()){
+	    char c = sta.pop();
+	    if(b && c!=list.get(i) ){
+		b=false;
+	    }
+	    i++;
+	    System.out.print(c);
+	}
+	System.out.println("\nEst palindrome : " + b);
+    }
+}

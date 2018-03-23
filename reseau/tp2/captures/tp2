@@ -1,0 +1,36 @@
+2a1 : Protocole ARP faire un lien entre adresse mac et ip
+2a2 : Broadcast adresse de paserelle à toutes les machines du réseau car on connait pas l'adresse ip
+2a3 : 4e:33:89:f2:ba:8b réponse a l'envoyeur
+2a4 : 192.168.1.254
+2a5 : Car c'est celle qui s'identifie à l'adresse mac envoyé par l'émetteur
+
+2b1 : Protocole ICMP véhiculer des messages de contrôle ou d’erreur
+2b2 : La commande ping
+2b3 : 98 bytes
+2b4 : 20 bytes
+2b5 : 64-61 = 3 routeurs
+
+2c1 : Time-to-live exceeded caar elle a traversé trop de routeurs
+2c2 : 195.10.1.5 et 210.10.10.1
+2c3 : requête http
+2c4 : 195.10.5.5
+
+2d1 : Au niveau IP 
+2d2 : 80 C'est le décalage dans la fragmentation 
+2d3 : 114 octets 
+2d4 : Quand trame/flag soit a set
+
+3a1 : UDP
+3a2 : sources : 592426 destination : 5001
+3a3 : Taille totale 84 octets, 84-20(en tête)-42(données)=22 octet en tête UDP
+
+3b1 : TCP
+3b2 : L'échange observé sert à mettre en place la connexion
+3b3 : 1307371690 2796482943 1307371691
+3b4 : 1460 , prise en compte des headers dans le mtu
+
+3c1 : 1756786906
+3c2 : 1756786914
+3C3 : 
+
+3d1 : L'echange observé sert à établir une connexion TCP

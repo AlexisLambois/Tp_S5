@@ -1,0 +1,43 @@
+#!/bin/bash
+
+PATH=$(cd $(dirname $0) ; pwd):$PATH
+
+tube=/tmp/requete
+mkfifo $tube
+
+port="8080"
+racine=""
+modele=""
+
+while getopts ":p:d:t:h" opt; do
+    case $opt in
+	p) 
+		let $OPTARG && port=$OPTARG
+	   	echo $port
+	;;
+	d) 
+		racine=$OPTARG
+	   	echo $racine
+	;;
+	t) 
+		modele=$OPTARG
+	    echo $modele
+	;;
+	h) 
+		echo " : Serveur web en HTTP/1.1 "
+	    echo " "
+	    echo "-p  Renseigne le port"
+	    echo "-d  Renseigne la racine du fichier"
+	    echo "-t  Modele utilise pour generation HTML"
+	    echo "-h  Affiche l'aide"
+	;;
+	\?)
+	    exit 1
+	    ;;
+    esac
+done
+
+while true
+do
+    cat $tube | http-request | nc.openbsd -l 127.0.0.1 $port > $tube
+done

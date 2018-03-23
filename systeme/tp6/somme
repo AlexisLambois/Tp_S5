@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my $rep = 0;
+
+foreach my $i (@ARGV) {
+	$rep = $rep + $i;
+}
+
+print $rep,"\n";

@@ -1,0 +1,6 @@
+public class Fluvial extends Cargaison_terre{
+
+    public Fluvial(int distance){
+
+    }
+}

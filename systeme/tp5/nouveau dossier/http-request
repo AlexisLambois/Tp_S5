@@ -1,0 +1,94 @@
+#!/bin/bash
+
+function verif {
+	if [ $(echo "$1 $2 $3" | wc -w) = 3 ]
+	then
+		if [ $1 = "GET" ]
+		then
+			if [ $3 = "HTTP/1.1" ]
+			then
+				good_reponse
+			else
+				bad_reponse "505" "HTTP Version not supported" "26"
+			fi
+		else
+			bad_reponse "405" "Method Not Allowed" "18"	
+		fi
+	else
+		echo "pas arg"
+	fi
+}
+
+function good_reponse {
+	printf "HTTP/1.1 200 OK\r\n"
+	printf "Content-Length: 2\r\n"
+	printf "Content-Type: text/text\r\n"
+	printf "\r\n"
+}
+
+contenu(){
+    contenu=$(echo $2 | cut -c "10-")
+    echo $contenu
+    echo "$1/$contenu"
+    test -f "$1/$contenu" && cat "$1/$contenu" &&  printf "\n" && printf "HTTP/1.1 200 OK"
+    test -d "$1/$contenu" && printf "HTTP/1.1 406 Not acceptable"
+    !(test -e "$1/$contenu") && printf "HTTP/1.1 404 Not found" 
+}
+
+html(){ 
+    contenu=$(echo $2 | cut -d "/" -f 3)
+    trierPar=$(echo $2 | cut -d "/" -f 5)
+    extension=$(echo $2 | cut -d "." -f 2)
+    !(test -e "$1/$contenu") && printf "HTTP/1.1 404 Not found" 
+    test -d "$1/$contenu" && echo "directory"
+
+    
+    if test -f "$1/$contenu"
+    	then
+		if [[ $(echo $2 | cut -d "/" -f 4) == "triepar" ]]
+		then
+	 	   if [[ $extension == "csv" ]]
+	  	  then
+				cat "$1/$contenu" | ./cvs2html $trierPar
+				printf "HTTP/1.1 200 OK"
+	 	   else
+				printf "HTTP/1.1 406 Not acceptable"
+	  	  fi
+		fi
+	
+		if [[ $extension == "csv" ]]
+		then
+	 		cat "$1/$contenu" | ./cvs2html
+	  		printf "HTTP/1.1 200 OK"
+		elif [[ $extension == "txt" ]]
+		then   
+        	cat "$1/$contenu" | ./remplace-dans modele-html
+	    	printf "HTTP/1.1 200 OK"
+		else
+	    	printf "HTTP/1.1 406 Not acceptable"
+		fi
+    fi
+}
+
+racine=$1
+
+read method source version
+
+if verif $method $source $version
+then
+	exit 1
+else
+    demande=$(echo $source | cut -d "/" -f 2)
+    echo $demande
+    if [[ $demande == "contenu" ]]
+    then
+		contenu $racine $source
+    elif [[ $demande == "html" ]]
+    then
+		html $racine $source
+    else
+		printf " HTTP/1.1 406 Not acceptable"
+    fi
+    printf "\r\n"
+fi
+

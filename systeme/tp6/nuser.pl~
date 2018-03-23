@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+print "Nombre d'utilisateurs connectes : \t";
+open(FICHIER, "/var/run/utmp");
+while (<FICHIER>) {
+	print;
+}
+print "\n";
+close(FICHIER);
